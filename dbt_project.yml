@@ -42,7 +42,7 @@ models:
       +materialized: table
       +schema: dev
     
-    fact:
+    fct:
       +materialized: incremental
       +schema: dev
     
