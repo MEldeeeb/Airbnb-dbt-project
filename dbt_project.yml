@@ -32,8 +32,12 @@ clean-targets:         # directories to be removed by `dbt clean`
 # files using the `{{ config(...) }}` macro.
 models:
   Airbnb_data_project:
-    # Config indicated by + and applies to all files under models/example/
+    # this is defult conf for all the project
+    +materialized: view
+    +post-hook:
+      - "Grant select on {{this}} to role reporter"
 
+    # config for each model
     src:
       +materialized: ephemeral 
       +schema: dev
