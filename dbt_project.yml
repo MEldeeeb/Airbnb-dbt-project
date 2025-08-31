@@ -8,6 +8,7 @@ version: '1.0.0'
 # This setting configures which "profile" dbt uses for this project.
 profile: 'Airbnb_data_project'
 
+
 # These configurations specify where dbt should look for different types of files.
 # The `model-paths` config, for example, states that models in this project can be
 # found in the "models/" directory. You probably won't need to change these!
@@ -57,3 +58,6 @@ models:
 seeds:
   Airbnb_data_project:      # your project name
     +schema: dev         # all seeds will go into dev schema
+
+# Specify the version of the dbt-utils package to be used in this project.
+
