@@ -6,5 +6,8 @@ sources:
     schema: RAW
     tables: 
         - name: RAW_HOSTS
+          description: "Raw hosts data"
         - name: RAW_LISTINGS
+          description: "Raw listings data"
         - name: RAW_REVIEWS
+          description: "Raw reviews data"

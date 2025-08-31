@@ -2,15 +2,18 @@ version: 2
 
 models:
 
-  # tests related to dim_listings_cleansed
+  #------------------------------------------------------------------ tests related to dim_listings_cleansed ----------------------------------------------------------#
   - name: dim_listings_cleansed
+    description: "Cleansed listings data"
     columns:
       - name: listing_id
+        description: "Unique identifier for each listing"
         tests:
           - unique
           - not_null
 
       - name: host_id
+        description: "Unique identifier for each host"
         tests:
           - not_null
           - relationships:
@@ -18,6 +21,7 @@ models:
               field: host_id
 
       - name: room_type
+        description: "Type of room being listed ex: Entire home/apt, Private room, Shared room, Hotel room"
         tests:
           - accepted_values:
               values: ['Entire home/apt', 'Private room', 'Shared room', 'Hotel room']
@@ -28,12 +32,47 @@ models:
               arguments:
                 column_name: minimum_nights
 
-
-
-  # tests related to dim_hosts_cleansed
+  # --------------------------------------------------------------- tests related to dim_hosts_cleansed ---------------------------------------------------------------#
   - name: dim_hosts_cleansed
+    description: "Cleansed hosts data"
     columns:
       - name: host_id
+        description: "Unique identifier for each host"
         tests:
           - unique
           - not_null
+
+      - name: host_name
+        description: "Name of the host"
+        tests:
+          - not_null
+
+      - name: is_superhost
+        description: "Indicates whether the host is a superhost"
+        tests:
+          - accepted_values:
+              values: ['t', 'f']
+ 
+
+  # --------------------------------------------------------------- tests related to dim_hosts_cleansed --------------------------------------------------------------#
+  - name: fct_reviews
+    description: "Fact table for reviews"
+    columns:
+      - name: listing_id
+        description: "Unique identifier for each listing"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_listings_cleansed')
+              field: listing_id
+      
+      - name: reviewer_name
+        description: "Name of the reviewer"
+        tests:
+          - not_null
+
+      - name: review_sentiment
+        description: "Text of the review"
+        tests:
+          - accepted_values:
+              values: ['positive', 'neutral', 'negative'] 
