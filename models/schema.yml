@@ -25,7 +25,8 @@ models:
         description: "Type of room being listed ex: Entire home/apt, Private room, Shared room, Hotel room"
         tests:
           - accepted_values:
-              values: ['Entire home/apt', 'Private room', 'Shared room', 'Hotel room']
+              arguments:
+                values: ['Entire home/apt', 'Private room', 'Shared room', 'Hotel room']
             
       - name: minimum_nights
         description: '{{ doc("dim_listing_cleansed__minimum_nights") }}'
@@ -53,7 +54,8 @@ models:
         description: "Indicates whether the host is a superhost"
         tests:
           - accepted_values:
-              values: ['t', 'f']
+              arguments:
+                values: ['t', 'f']
  
 
   # --------------------------------------------------------------- tests related to dim_hosts_cleansed --------------------------------------------------------------#
@@ -78,4 +80,5 @@ models:
         description: "Text of the review"
         tests:
           - accepted_values:
-              values: ['positive', 'neutral', 'negative'] 
+              arguments:
+                values: ['positive', 'neutral', 'negative'] 
