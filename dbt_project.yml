@@ -61,3 +61,5 @@ seeds:
 
 # Specify the version of the dbt-utils package to be used in this project.
 
+vars:
+  user_name: 'Mohamed Mahmoud Eldeeb'
