@@ -1,0 +1,39 @@
+Airbnb_data_project:
+  outputs:
+    dev:
+      account: NP83949.EU_CENTRAL_2.AWS
+      database: AIRBNB
+      password: '!KzXcb2n333vVrg'
+      role: ACCOUNTADMIN
+      schema: raw 
+      threads: 4
+      type: snowflake
+      user: MELDEEB17
+      warehouse: COMPUTE_WH
+  target: dev
+finansial_proj:
+  outputs:
+    dev:
+      account: NP83949.EU_CENTRAL_2.AWS
+      database: finance_db
+      password: '!KzXcb2n333vVrg'
+      role: ACCOUNTADMIN
+      schema: raw
+      threads: 4
+      type: snowflake
+      user: MELDEEB17
+      warehouse: finance_wh
+  target: dev
+finantial_data_project:
+  outputs:
+    dev:
+      account: NP83949.EU_CENTRAL_2.AWS
+      database: finance_db
+      password: '!KzXcb2n333vVrg'
+      role: ACCOUNTADMIN
+      schema: raw
+      threads: 4
+      type: snowflake
+      user: MELDEEB17
+      warehouse: FINANCE_WH
+  target: dev
