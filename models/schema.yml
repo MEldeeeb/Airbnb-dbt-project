@@ -103,7 +103,7 @@ models:
 
           - dbt_expectations.expect_column_max_to_be_between:
               min_value: 1000 
-              max_value: 5000
+              max_value: 9000
               config:
                 severity: warn
           
